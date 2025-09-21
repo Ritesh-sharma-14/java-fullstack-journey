@@ -1,3 +1,5 @@
-git init
-git add HelloWorld.java
-git commit -m "Add HelloWorld.java"
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
