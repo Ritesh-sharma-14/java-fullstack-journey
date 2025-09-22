@@ -1,0 +1,35 @@
+//Program to check palindrome,reverse & word count.
+
+class StringUtilities{
+   static boolean isPalindrome(String s){
+       int i=0,j=s.length()-1;
+         while(i<j){
+             if(s.charAt(i)!=s.charAt(j) return false;
+              i++;j--;
+          }
+        return true ;
+   }
+
+static  String reverse(String s){
+     return new StringBuilder(s).reverse().toString();
+}
+
+Static int wordCount(String s){
+   String[] words=s.trim().split("\\st");
+      return words.length;
+ }
+
+public static void main(String[] args){
+   String str="madam";
+   System.out.println("Is palindrome?" +isPalindrome(str));
+   System.out.println("Reverse: " +reverse("JAVA FULL STACK"));;
+   System.out.println("Word count:" +wordCount("JavaIsBest"));
+}
+}
+
+
+
+
+
+
+
