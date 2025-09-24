@@ -1,6 +1,6 @@
 package DSA;
 
-public class revarray {
+public class revstring {
     public static void main(String[] args){
     String str="Ritesh";
     String rev=" ";
