@@ -1,0 +1,21 @@
+class Node {
+    int data;
+    Node left, right;
+    Node(int data) { this.data = data; }
+}
+
+class BST {
+    Node root;
+    Node insert(Node root, int data) {
+        if (root == null) return new Node(data);
+        if (data < root.data) root.left = insert(root.left, data);
+        else root.right = insert(root.right, data);
+        return root;
+    }
+
+    boolean search(Node root, int key) {
+        if (root == null) return false;
+        if (root.data == key) return true;
+        return key < root.data ? search(root.left, key) : search(root.right, key);
+    }
+}
