@@ -1,0 +1,79 @@
+import java.util.*;
+
+class Book{
+   String title;
+   boolean isBorrowed;
+
+  Book(String title){
+    this.title=title;
+    this.isBorrowed=false;
+  }
+}
+
+class Library{
+  ArrayList<Book> books=new ArrayList<>();
+
+  void addBook(String title){
+     books.add(new Book(title));
+     System.out.println(title+"added to Library");
+   }
+void borrowBook(String title){
+  for(Book b:books){
+  if(b.title .equalsIgnoreCase(title)&& !b.isBorrowed){
+     b.isBorrowed = true;
+     System.out.println("You Borrowed:" +title);
+     return;
+   }
+ }
+System.out.println("Book not available!");
+ }
+
+void returBook(String title){
+    for(Book b:books){
+      if(b.title.equalsIgnoreCase(title)&& b.isBorrowed){
+         b.isBorrowed = false;
+        System.out.println("You returned:" +title);
+         return;
+      }
+ System.out.println("Invalid return request!");
+}
+
+void showBooks(){
+   for(Book b:boks){
+ System.out.println(b.title+(b.isBorrowed?"(Borrowed)":"(Available)"));
+    }
+ }
+
+public class Librarymanagement{
+     public static void main(String[] args){
+        Library lib=new Library();
+        Scanner sc=new Scanner(System.in);
+
+       while(true){
+          System.out.println("\n1.Add Book 2.Borrow Book 3.return Book 4.Show Books 5.Exit");
+          int choice= sc.nextInt();
+          sc.nextInt(); // consume new line
+
+         if(choice == 1){
+          System.out.println("Enter book title:"):
+          String title=sc.nextLine();
+          lib.addBook(title);
+        }else if(choice==2){ 
+         System.out.println("Entr Book Title:");
+         String title=sc.nextLine();
+         lib.borrowBook(title);
+        }else if(choice ==3){ 
+         System.out.println("Enter Book Title:");
+         String title=sc.nextLine();
+         lib.returnBook(title);
+       }else if(choice ==4){
+         lib.showBooks();
+       }else{
+          System.out.println("Good Bye!");
+          break;
+         }
+      }
+   sc.close();
+  }
+
+
