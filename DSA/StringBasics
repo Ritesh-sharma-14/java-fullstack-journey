@@ -1,0 +1,11 @@
+class StringDemo {
+    public static void main(String[] args) {
+        String S = "Hello World!";
+
+        System.out.println("Length: " + S.length());
+        System.out.println("Char at 1: " + S.charAt(1));
+        System.out.println("Substring: " + S.substring(0, 5));
+        System.out.println("UpperCase: " + S.toUpperCase());
+        System.out.println("Contains 'world'? " + S.contains("world"));
+    }
+}
