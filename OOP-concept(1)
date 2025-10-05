@@ -1,0 +1,26 @@
+class Student {
+    String name;
+    int age;
+     static String school="ABC school"; //shared by all objects
+
+//Constructor
+   Student(String name, int age){
+        this.name= name;
+        this.age=age;
+    }
+
+  void display(){
+    System.out.println(name+ "c" +Age+")studies at" +school);
+    }
+ }
+
+ public class Main {
+   public static void main(String[] args){
+      Student s1= new Student("Ravi", 20);
+      Student s2=new Student("Priya",19);
+
+      s1.display();
+      s2.display();
+   }
+}
+     
