@@ -1,0 +1,19 @@
+class parent{
+   void show() {
+      System.out.println("This is the parent class");
+      }
+    }
+
+    class Child extends Parent {
+        @Override
+        void show(){
+             System.out.println("This is the child class");
+             }
+      }
+
+      public class Test {
+          public static void main(String[] args){
+               Parent obj =new Child();  //Upcasting
+               obj.show();//Output : This is the child class
+               }
+          }
