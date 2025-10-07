@@ -1,0 +1,21 @@
+import java.util.*;
+
+public  class DuplicateFinder{
+      public static void main(String[] args){
+         int arr[] = {1,3,4,5,5};
+
+          HashSet<Integer> seen= new HashSet<>();
+
+          for(int i=0;i<arr.length;i++){
+             int num=arr[i];//take current element
+
+          if(seen.contains(num)){
+             System.out.println("Duplicate:" +num);
+               break;
+          } else{
+              seen.add(num);//add
+            //number to set
+           }
+         }
+     }
+}
