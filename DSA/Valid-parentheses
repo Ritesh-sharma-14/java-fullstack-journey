@@ -1,0 +1,20 @@
+import java.util.*;
+
+public clas ValidParentheses{
+   public static boolean isValid(String s){
+       Stack<Character> Stack=new Stack<>();
+       for(Char c:s.toCharArray()){
+          if(c=='('|| c=='{'|| c=='[') 
+              Stack.push(c);
+          else{ 
+              if(Stack.isEmpty()) return false;
+              if((c==')' && top!='c') || (c=='}' && top!='{') || (c==']' && top!='[')) return false;
+           }
+         }
+   return Stack.isEmpty();
+ }
+ public static void main(String[] args){
+    System.out.println(isValidParentheses("(){}[]"));//true
+    System.out.println(isValidParentheses("(]"));//false
+   }
+}
