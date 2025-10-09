@@ -1,0 +1,13 @@
+import java.io.*;
+
+public class CheckedExample{
+    public static void main(String[] args){
+     try{ 
+  //File may not exist 
+    FileReader fr= new FileReader("test.text");
+    System.out.println("File opened successfully");
+    }catch(FileNotFoundException e){
+     System.out.println("File not found:" +e.getMessage());
+  }
+ }
+}
