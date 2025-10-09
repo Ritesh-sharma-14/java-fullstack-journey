@@ -1,0 +1,12 @@
+import java.util.*;
+
+Public class UncheckedExample{
+     public static void main(String[] args){
+        try{   
+          int arr[] ={1,2,3};
+          System.out.println(arr[5]);//risky code
+          }catch (ArrayIndexOutOfBoundsException e){
+             System.out.println("Error:" +e.getMessage());
+           }
+        ]
+     }
