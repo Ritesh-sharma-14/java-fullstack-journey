@@ -1,0 +1,10 @@
+public class WrapperDemo{
+    public static void(String[] args){
+      int a=10;//primitive 
+      Integer obj= a;//autoboxing
+      System.out.println("object:" +obj);
+
+      int b=obj;//unboxing
+      System.out.println("Primitive : " +b);
+      }
+}
