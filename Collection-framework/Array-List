@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class ArrayListDemo{
+  public static void main(String[] args){
+      ArrayList<String> list = new ArrayLis<>();
+      list.add("Varanasi);
+      list.add("Mumbai");
+      list.add("Delhi");
+
+      System.out.println(list);//[Varanasi,Mumbai,Delhi]
+      System.out.println(list.get(1));//Mumbai
+
+      list.remove("Mumbai");
+      System.out.println(list);  //[Varanasi,Delhi]
+     }
+ }
