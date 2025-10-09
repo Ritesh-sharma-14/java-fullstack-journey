@@ -1,0 +1,29 @@
+//use arraylist to store student details
+
+import java.util.*;
+
+Class Student{
+  int id;
+  String name;
+
+  Student(int id,String name){
+      this.id= id;
+      this.name= name;
+  }
+
+  public String toString(){
+      return id + "-" + name;
+   }
+}
+
+public class StudentApp{
+   public static void main(String[] args){
+      ArrayList<Student> students= new ArrayList<.();
+      students.add(new Student(1,"Ritesh"));
+      students.add(new Student(2,"Raju"));
+
+      for(Student s: students){
+           System.out.println(s);
+       }
+   }
+}
