@@ -1,0 +1,17 @@
+//writing a file
+
+import java.io.FileWriter;
+import java.io.IOExceptions;
+
+public class WWriteFile{
+   public static void  main(String[] args){
+        try{
+           FileWriter fw= new FileWriter("notes.txt");
+           fw.write("Hello, this is my note!");
+           fw.close();
+           System.out.println("File written succesfully");
+           }catch(IO Exception e){
+              e.printStackTrace();
+           }
+    }
+}
