@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.scanner;
+
+public class NoteTakingApp{
+   private static final String FILE_NAME="notes.txt";
+   public static void main(String[] args){
+     Scanner sc= new Scanner(System.in);
+     while(true){
+       System.out.println("\n--- Note Taking App --");
+       System.out.println("1.Add Note");
+       System.out.println("2.View Notes");
+       System.out.println("1.Exit");
+       int choice = sc.nextInt();
+       sc.nextline();//consume newLine
+
+      switch(Choice){
+         case 1 -> addNotes(sc);
+         case 2 -> viewNotes();
+         case 3 -> {
+             System.out.println("Good Bye!");
+             return;
+          }
+         default -> System.out.println("Invalid choice!");
+      }
+   }
+}
+
+   private static void addNote(Scanner sc){
+      try(FileWriter fw= new FileWriter(FILE_NAME,true)){
+          System.out.println("Enter your note:");
+          String note = sc.nextLine();
+          fw.write(note+ "\n"); 
+          System.out.println("Note added Succesfully!");
+       }catch(IOException e){
+          e.printstaticTrace();
+        }
+    }
+
+  private static void viewNotes(){
+     try(BufferReadder br= new BufferedReader( new FileReader(FILE_NAME))){
+       String line;
+       System.out.println("\n -- Your Notes-- ");
+       while((line= br.readline())!= null){
+          System.out.println("-" +line);
+        }
+     }catch(IOException e){
+       System.out.println("No notes found!");
+      }
+    }
+}
