@@ -1,0 +1,44 @@
+import java.util.concurrent.locks.ReentrantLock;
+
+class SharedResource {
+    private final ReentrantLock lock = new ReentrantLock();
+
+    void printMessage(String message) {
+        lock.lock();  // acquire the lock
+        try {
+            System.out.println(Thread.currentThread().getName() + " started printing: " + message);
+            Thread.sleep(500);
+            System.out.println(Thread.currentThread().getName() + " finished printing: " + message);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();  // always release the lock
+        }
+    }
+}
+
+class MyWorker extends Thread {
+    SharedResource resource;
+    String message;
+
+    MyWorker(SharedResource resource, String message) {
+        this.resource = resource;
+        this.message = message;
+    }
+
+    public void run() {
+        resource.printMessage(message);
+    }
+}
+
+public class ReentrantLockExample {
+    public static void main(String[] args) {
+        SharedResource resource = new SharedResource();
+
+        MyWorker t1 = new MyWorker(resource, "Hello");
+        MyWorker t2 = new MyWorker(resource, "World");
+
+        t1.start();
+        t2.start();
+    }
+}
