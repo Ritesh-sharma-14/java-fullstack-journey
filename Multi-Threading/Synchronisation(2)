@@ -1,0 +1,35 @@
+class Printer {
+    void printDoc(String doc) {
+        synchronized(this) {
+            for (int i = 1; i <= 3; i++) {
+                System.out.println(Thread.currentThread().getName() + " printing " + doc + " page " + i);
+                try { Thread.sleep(500); } catch (InterruptedException e) {}
+            }
+        }
+    }
+}
+
+class PrintThread extends Thread {
+    Printer printer;
+    String doc;
+    PrintThread(Printer p, String d) {
+        printer = p;
+        doc = d;
+    }
+
+    public void run() {
+        printer.printDoc(doc);
+    }
+}
+
+public class SyncBlockDemo {
+    public static void main(String[] args) {
+        Printer printer = new Printer();
+
+        PrintThread t1 = new PrintThread(printer, "JavaNotes.pdf");
+        PrintThread t2 = new PrintThread(printer, "DSA.pdf");
+
+        t1.start();
+        t2.start();
+    }
+}
