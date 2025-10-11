@@ -1,0 +1,26 @@
+class Queue{
+   int front=0, rear=-1, Size=5,count=0;
+   int arr[]= new int[size];
+
+    void enqueue(int x){
+      if(count== size){
+        System.out.println("Queue Full!");
+        return;
+       }
+       rear=(rear+1)%size;
+       arr[rear]=x;
+       count++;
+     }
+
+     int dequeue(){
+        if(count == 0){
+          System.out.println("Queue Empty!");
+          return -1;
+         }
+
+        int x= arr[front];
+        front= (front+1)%size;
+        count--;
+        return x;
+      } 
+  }
