@@ -1,0 +1,10 @@
+@WebServlet("/postExample")
+public class PostExample extends HttpServlet{ 
+  @Override
+  protectedvoid doPOST(HttpServletREquest req,HttpServletResponse resp) throws IOException{
+       String username = req.getParameter("username");
+       String password = req.getParameter("password");
+       resp.SetContentType("text/html");
+       resp.getWriter().println("<h2>Login attempt by" +username + "</h2>");
+    }
+}
