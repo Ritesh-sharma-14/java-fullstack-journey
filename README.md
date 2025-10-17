@@ -17,6 +17,8 @@ Each section focuses on hands-on learning with practical code examples, real-wor
 
 <h2>🧩 Contents</h2>
 
+<h2>🧩 Contents</h2>
+
 <table>
   <thead>
     <tr>
@@ -47,13 +49,17 @@ Each section focuses on hands-on learning with practical code examples, real-wor
       <td><a href="https://github.com/Ritesh-sharma-14/jdbc-learning-hub" target="_blank">jdbc-learning-hub 🔗</a></td>
     </tr>
     <tr>
+      <td>🌱 <strong>Spring Boot Backend</strong></td>
+      <td>Modern backend development using Spring Framework, Spring Boot, Hibernate (JPA), and RESTful APIs.</td>
+      <td><a href="https://github.com/Ritesh-sharma-14/springboot-backend-journey" target="_blank">springboot-backend-journey 🔗</a></td>
+    </tr>
+    <tr>
       <td>💻 <strong>Mini Projects</strong></td>
       <td>Real-world small projects applying Core Java, OOPs, and JDBC — such as Employee Management, Student Record, and Login Systems.</td>
       <td><a href="./MiniProjects">View Folder</a></td>
     </tr>
   </tbody>
 </table>
-
 <hr>
 
 <h2>🎯 Objective</h2>
