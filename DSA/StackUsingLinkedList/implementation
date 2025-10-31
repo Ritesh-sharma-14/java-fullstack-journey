@@ -1,0 +1,51 @@
+class StackLinkedList {
+    private Node top;  // points to top of stack
+
+    // Push element
+    public void push(int data) {
+        Node newNode = new Node(data);
+        newNode.next = top;  // link new node to previous top
+        top = newNode;       // update top
+        System.out.println(data + " pushed to stack");
+    }
+
+    // Pop element
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty!");
+            return -1;
+        }
+        int popped = top.data;
+        top = top.next; // move top to next node
+        return popped;
+    }
+
+    // Peek element
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty!");
+            return -1;
+        }
+        return top.data;
+    }
+
+    // Check empty
+    public boolean isEmpty() {
+        return top == null;
+    }
+
+    // Display stack
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty!");
+            return;
+        }
+        Node temp = top;
+        System.out.print("Stack: ");
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
