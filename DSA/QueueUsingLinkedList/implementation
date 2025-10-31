@@ -1,0 +1,60 @@
+class QueueLinkedList{
+    private Node front,rear;
+
+//enqueue (add element at rear)
+public void enqueue(int data){
+    Node newNode= new Node(data);
+    if(rear==NULL){
+        front = rear = newNode;
+        System.out.println(data+"enqueued");
+        return;
+      }
+     rear.next=newNode;
+     rear=newNode;
+     System.out.println(data+"enqueued");
+}
+//Dequeue(remove from front)
+public int dequeue(){
+   if(isEmpty()){
+      System.out.println("Queue is empty!");
+      return -1;
+    }
+     int value = front.data;
+     front= front.next;
+
+  //if queue becomes empty 
+  if(front==null)
+    rear = null;
+  return value;
+}
+
+//peek (view front element)
+public int peek(){
+  if(isEmoty()){
+     System.out.println("Empty Queue!");
+      return-1;
+   }
+return front.data;
+}
+
+//check empty
+public boolean isEmpty(){
+   return front==  null;
+}
+
+//display queue
+public void display(){
+   if(isEmpty()){
+   System.out.println("Queue is Empty!");
+   return;
+}
+
+Node temp= front;
+System.out.println("Queue:");
+while(temp!=null){
+   System.out.println(temp.data+" ");
+   temp=temp.next;
+  }
+   System.out.println();
+   }
+}
